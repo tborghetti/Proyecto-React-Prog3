@@ -3,11 +3,11 @@ import React from 'react';
 function Card(props) {
     return (
         <div className="Card">
-        <p>{props.DataShown.results.gender}</p>
-            {/* <img src={props.DataShown.results.picture.medium} alt=""/> */}
-            {/* <h2>{props.DataShown.results.name.last}</h2>
-            <p>{props.DataShown.results.name.first} - {props.DataShown.results.email}</p>
-            <p>{props.DataShown.results.dob.date} - {props.DataShown.results.dob.age}</p> */}
+        <p>{props.DataShown.gender}</p>
+            <img src={props.DataShown.picture.medium} alt=""/>
+            <h2>{props.DataShown.name.last}</h2>
+            <p>{props.DataShown.name.first} - {props.DataShown.email}</p>
+            <p>{props.DataShown.dob.date} - {props.DataShown.dob.age}</p>
         </div>
     );
 }
