@@ -1,3 +1,25 @@
-div.cards{
+header h1{
+    font-family: Optima, sans-serif;
+    margin-bottom: 0px;
+    text-align: center;
+}
 
+div.Card{
+    align-items: center;
+}
+div.Card h2.name{
+    font-family: Optima, sans-serif;
+}
+
+div.Card p.other{
+    font-family: Optima, serif;
+}
+
+div.Card button{
+    font-family: Optima, serif;
+    text-align: center;
+}
+
+footer{
+    font-family: Optima, sans-serif;
 }
