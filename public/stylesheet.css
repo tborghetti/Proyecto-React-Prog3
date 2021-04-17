@@ -6,6 +6,7 @@ header h1{
 
 div.Card{
     align-items: center;
+    border: 5px lightskyblue;
 }
 div.Card h2.name{
     font-family: Optima, sans-serif;
@@ -14,12 +15,21 @@ div.Card h2.name{
 div.Card p.other{
     font-family: Optima, serif;
 }
-
-div.Card button{
+a.delete{
+    color:lightskyblue;
+}
+a.Card{
     font-family: Optima, serif;
-    text-align: center;
 }
 
+
+div.moreDetail{
+    font-family: Optima, serif;
+    text-align: left;
+}
+div.Card span{
+    color: lightskyblue;
+}
 footer{
     font-family: Optima, sans-serif;
 }

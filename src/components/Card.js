@@ -11,57 +11,47 @@ export default class Card extends Component {
     render() {
         return (
             <div className="Card uk-grid-small uk-background-muted uk-padding uk-card-hover uk-width-1-3@m">
-                <a onClick={this.props.onDelete.bind(this, this.props.id)} href= "#"><i class="fas fa-times"></i></a>
-                <div className="uk-grid-small uk-flex-middle" uk-grid>
-                    <p className="other" >{this.props.DataShown.gender}</p>
+                <a className="delete uk-align-right" onClick={this.props.onDelete.bind(this, this.props.id)} href= "#"><i class="fas fa-times"></i></a><br></br>
+
+                <div className="uk-align-center uk-grid-small uk-flex-middle" uk-grid>
                     <div className="uk-width-auto">
-                        <img src={this.props.DataShown.picture.medium} alt="" />
+                        <img className=" uk-border-circle" width="150" height="150" src={this.props.DataShown.picture.large} alt="" />
                         <h2 className="name uk-card-title uk-margin-remove-bottom"> {this.props.DataShown.name.last}, {this.props.DataShown.name.first}</h2>
                         <p className="other uk-text-meta uk-margin-remove-top">{this.props.DataShown.email}</p>
                         <hr></hr>
                     </div>
-                    <p className="other" >{this.props.DataShown.dob.date} - ({this.props.DataShown.dob.age}) </p>
+                    <p className="other uk-text-capitalize" >{this.props.DataShown.gender}</p>
+                    <p className="other" uk-datepicker="{format:'DD.MM.YYYY'}">{this.props.DataShown.dob.date} - ({this.props.DataShown.dob.age}) </p>
                     <hr></hr>
                 </div>
                 <ul uk-accordion="multiple: true">
                     <li className="uk-close">
-                        <a className="uk-accordion-title" href="#">More info</a>
-                        <div className="uk-accordion-content">
+                        <a className="Card uk-accordion-title" href="#">More details</a>
+                        <div className="moreDetail uk-accordion-content">
                             <ul>
                                 <li>
                                     <p>
-                                        Calle y numero: 
-                                       {this.props.DataShown.location.street.name} {this.props.DataShown.location.street.number}
+                                        <span>Address:</span> {this.props.DataShown.location.street.name} {this.props.DataShown.location.street.number}, {this.props.DataShown.location.city} 
                                     </p>
                                 </li>
                                 <li>
                                     <p>
-                                        Ciudad - estado:
-                                       {this.props.DataShown.location.city} - {this.props.DataShown.location.state}
+                                        <span>Location:</span> {this.props.DataShown.location.state}, {this.props.DataShown.location.country}
                                     </p>
                                 </li>
                                 <li>
                                     <p>
-                                        País:
-                                       {this.props.DataShown.location.country}
+                                        <span>Zip Code:</span> {this.props.DataShown.location.postcode}
                                     </p>
                                 </li>
                                 <li>
                                     <p>
-                                        Codigo Postal:
-                                       {this.props.DataShown.location.postcode}
+                                        <span>Date Registered:</span> {this.props.DataShown.registered.date}
                                     </p>
                                 </li>
                                 <li>
                                     <p>
-                                        Fecha de registro:
-                                        {this.props.DataShown.registered.date}
-                                    </p>
-                                </li>
-                                <li>
-                                    <p>
-                                        Telefono:
-                                        {this.props.DataShown.phone}
+                                        <span>Phone Number:</span> {this.props.DataShown.phone}
                                     </p>
                                 </li>
                             </ul>
