@@ -10,9 +10,8 @@ export default class Card extends Component {
 
     render() {
         return (
-            <div className="Card uk-grid-small uk-background-muted uk-padding uk-card-hover uk-width-1-3@m">
+            <div className="Card uk-grid-small uk-background-muted uk-padding uk-card-hover uk-width-1-3@m uk-sortable-handle" >
                 <a className="delete uk-align-right" onClick={this.props.onDelete.bind(this, this.props.id)} href= "#"><i class="fas fa-times"></i></a><br></br>
-
                 <div className="uk-align-center uk-grid-small uk-flex-middle" uk-grid>
                     <div className="uk-width-auto">
                         <img className=" uk-border-circle" width="150" height="150" src={this.props.DataShown.picture.large} alt="" />

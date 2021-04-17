@@ -3,10 +3,14 @@ header h1{
     margin-bottom: 0px;
     text-align: center;
 }
+header img.naranja{
+    width: 50px;
+    height: 50px;
+}
 
 div.Card{
     align-items: center;
-    border: 5px lightskyblue;
+    border: 5px rgb(207, 116, 37);
 }
 div.Card h2.name{
     font-family: Optima, sans-serif;
@@ -21,8 +25,16 @@ a.delete{
 a.Card{
     font-family: Optima, serif;
 }
-
-
+ul{
+    list-style: none;
+}
+div.container{
+    font-family: Optima, serif;
+    margin-left: 10px;
+}
+input{
+    width: 75px;
+}
 div.moreDetail{
     font-family: Optima, serif;
     text-align: left;
