@@ -43,11 +43,15 @@ export default class CardsContainer extends Component {
     render(){
         return (
             <div>
-            <div className='container' >
-            <input type="number" min="1" placeholder='# of Cards'></input>
-            <a onClick={this.addCard.bind(this)}> <i class="fas fa-plus"></i></a>
-            <input type="text" required placeholder='Filter'></input>
+            <div className='container'>
+            <span>
+            <input className='add' type="number" min="1" placeholder='# of Cards'></input>
+            <a onClick={this.addCard.bind(this)}><i class="fas fa-plus"></i></a>
+            </span>
+            <span>
+            <input className='filter' type="text" required placeholder='Filter'></input>
             <a onClick={this.filterCards.bind(this)}><i class="fas fa-filter"></i></a>
+            </span>
             </div>
             <div className="uk-grid-collapse uk-text-center"  uk-sortable="handle: .uk-sortable-handle" uk-grid='true'>
                 {this.state.infoCards.map( (oneCard, idx) => {

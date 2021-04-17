@@ -1,36 +1,79 @@
+div.App{
+background-color: #363636;
+}
 header h1{
     font-family: Optima, sans-serif;
     margin-bottom: 0px;
     text-align: center;
+    color: #f6a00d;
 }
 header img.naranja{
     width: 50px;
     height: 50px;
 }
-
+span.buscandoTitle{
+    color: #ff7100;
+    
+}
+span.miTitle{
+    color: #fcb554;
+}
+span.medio{
+    color:whitesmoke;
+}
 div.Card{
     align-items: center;
     border: 5px rgb(207, 116, 37);
+    background-color: #363636;
+}
+div.uk-grid-collapse :hover{
+    background-color: #242323;
 }
 div.Card h2.name{
+    color: #ff7100;
     font-family: Optima, sans-serif;
 }
 
 div.Card p.other{
     font-family: Optima, serif;
+    color: whitesmoke;
+}
+div.Card p.email{
+    font-family: Optima, serif;
+    color: #fcb554;
+}
+i.fa-filter{
+    padding-left: 5px;
+    color: #f4a40c;
+}
+i.fa-plus{
+    padding-left: 5px;
+    color: #f4a40c;
 }
 a.delete{
-    color:lightskyblue;
+    color:#f4a40c;
+    
+}
+a.delete :hover{
+    color: #363636;
 }
 a.Card{
+    text-align: center;
     font-family: Optima, serif;
+    color:#f4a40c;
+}
+a.Card :hover{
+    color:#fc7404;
 }
 ul{
     list-style: none;
 }
 div.container{
     font-family: Optima, serif;
-    margin-left: 10px;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+    display: flex;
+    justify-content: space-between;
 }
 input{
     width: 75px;
@@ -39,9 +82,11 @@ div.moreDetail{
     font-family: Optima, serif;
     text-align: left;
 }
+
 div.Card span{
-    color: lightskyblue;
+    color: #ff7100;
 }
+
 footer{
     font-family: Optima, sans-serif;
 }
