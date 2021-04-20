@@ -26,18 +26,22 @@ export default class CardsContainer extends Component {
       }
 
       addCard(){
-        fetch('https://randomuser.me/api/?results=2')
+       let inputAdd = document.querySelector(".add").value //para obtenr el valor del input y sin el value te trae todo el input -  //aca tenemos que capturar el valor del input
+       console.log(inputAdd)
+        fetch('https://randomuser.me/api/?results='+ inputAdd) 
         .then((result) => result.json())
         .then((data) => { 
-          this.state.infoCards.push(data.results[0]);
-          this.setState({infoCards: this.state.infoCards})
+          let info = data.results.concat(this.state.infoCards); //concat:metodo que permite unir dos arrays en uno - guardar eso en una var - pusios primero el data.results para que 
+          this.setState({infoCards: info})
         })
       }
-      filterCards(condition){
-        console.log(condition);
+      filterCards(){
+        let inputFilter = document.querySelector(".filter").value
+        console.log(inputFilter)
         let lookUp = this.state.infoCards.filter((search)=>{
-            return search === condition
+            return search.name.first.startsWith(inputFilter) || search.name.last.startsWith(inputFilter) || search.dob.age === inputFilter
           })
+        console.log(lookUp)
           this.setState({infoCards: lookUp})
       }
     render(){
