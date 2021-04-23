@@ -90,3 +90,6 @@ div.Card span{
 footer{
     font-family: Optima, sans-serif;
 }
+input .add{
+    background-color: pink;
+}

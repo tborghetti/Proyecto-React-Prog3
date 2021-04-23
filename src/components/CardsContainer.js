@@ -36,10 +36,15 @@ export default class CardsContainer extends Component {
         })
       }
       filterCards(){
-        let inputFilter = document.querySelector(".filter").value
+        let inputFilter = document.querySelector(".filter").value.toUpperCase()
         console.log(inputFilter)
         let lookUp = this.state.infoCards.filter((search)=>{
-            return search.name.first.startsWith(inputFilter) || search.name.last.startsWith(inputFilter) || search.dob.age === inputFilter
+            let fname = search.name.first.toUpperCase()
+            let flastname = search.name.last.toUpperCase()
+            let fage = search.dob.age.toString()
+            
+            
+          return fname.startsWith(inputFilter) || flastname.startsWith(inputFilter) ||  fage.includes(inputFilter) //buscar si incluye el numero y pasar todo a tring y poner con el metodo include()
           })
         console.log(lookUp)
           this.setState({infoCards: lookUp})
@@ -53,14 +58,16 @@ export default class CardsContainer extends Component {
             <a onClick={this.addCard.bind(this)}><i class="fas fa-plus"></i></a>
             </span>
             <span>
-            <input className='filter' type="text" required placeholder='Filter'></input>
-            <a onClick={this.filterCards.bind(this)}><i class="fas fa-filter"></i></a>
+            <input onChange={this.filterCards.bind(this)}className='filter' type="text" required placeholder='Filter'></input>
+            <a onClick={this.filterCards.bind(this)}><i class="fas fa-filter"></i></a> hay que ver que hacemos con esto
+            <button>RESET FILTER</button>
             </span>
             </div>
             <div className="uk-grid-collapse uk-text-center"  uk-sortable="handle: .uk-sortable-handle" uk-grid='true'>
                 {this.state.infoCards.map( (oneCard, idx) => {
                     return (
-                        <Card DataShown={oneCard} key={idx} onDelete={this.delete.bind(this)} id={oneCard.id} />
+                        <Card DataShown={oneCard} key={idx} onDelete={this.delete.bind(this)} id={oneCard.id} originaldate={oneCard.dob.date} />
+                    
 
                     )
                 })

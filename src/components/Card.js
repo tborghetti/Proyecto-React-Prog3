@@ -7,8 +7,17 @@ export default class Card extends Component {
 
         }
     }
-
-    render() {
+    componentDidMount(){
+        let apiDate = this.props.originaldate;
+        let timestamp = new Date(apiDate).getTime();
+        let day = new Date(timestamp).getDate();
+        let month = new Date(timestamp).getMonth() + 1;
+        let year = new Date(timestamp).getFullYear();
+        let beautifulDate = day + '/' + month + '/' + year 
+         this.setState({beautifulDate: beautifulDate})
+      }
+    
+      render() {
         return (
             <div className="Card uk-grid-small uk-background-muted uk-padding uk-width-1-3@m uk-sortable-handle" >
                 <a className="delete uk-align-right" onClick={this.props.onDelete.bind(this, this.props.id)} href= "#"><i class="fas fa-times"></i></a><br></br>
@@ -20,7 +29,7 @@ export default class Card extends Component {
                         <hr></hr>
                     </div>
                     <p className="other uk-text-capitalize" >{this.props.DataShown.gender}</p>
-                    <p className="other" uk-datepicker="{format:'DD.MM.YYYY'}">{this.props.DataShown.dob.date} - ({this.props.DataShown.dob.age}) </p>
+                    <p className="other">{this.state.beautifulDate} - ({this.props.DataShown.dob.age}) </p>
                     <hr></hr>
                 </div>
                 <ul uk-accordion="multiple: true">
