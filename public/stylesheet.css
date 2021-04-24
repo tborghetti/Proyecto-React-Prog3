@@ -75,8 +75,13 @@ div.container{
     display: flex;
     justify-content: space-between;
 }
-input{
+input.filter{
     width: 75px;
+    border: 2px solid #f4a40c;
+    border-radius: 5px;
+    color: #f4a40c;
+    background-color: none;
+    text-align: center;
 }
 div.moreDetail{
     font-family: Optima, serif;
@@ -90,6 +95,39 @@ div.Card span{
 footer{
     font-family: Optima, sans-serif;
 }
-input .add{
-    background-color: pink;
+input.add{
+    width: 75px;
+    border: 2px solid #f4a40c;
+    border-radius: 5px;
+    color: #f4a40c;
+    background-color: none;
+    text-align: center;
 }
+
+/* boton de Reset */
+
+.skewBtn {
+    border: 2px solid #FBC02D;
+    color: #FBC02D;
+}
+.skewBtn:hover {
+      background-color: #FBC02D;
+      transition: all 0.3s ease-in-out;
+    }
+.skewBtn{
+    width: 100px;
+    height: 40px;
+    outline: none;
+    cursor: pointer;
+    background: none;
+    transition: .5s;
+    font-size: 10px;
+    border-radius: 5px;
+    font-family: "Lato",sans-serif;
+  }    
+.skewBtn:hover{
+      border: none;
+      color: white;
+      font-size: 12px;
+      transform:scale(1.1);
+    }

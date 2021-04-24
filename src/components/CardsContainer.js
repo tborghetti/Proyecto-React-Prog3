@@ -49,18 +49,21 @@ export default class CardsContainer extends Component {
         console.log(lookUp)
           this.setState({infoCards: lookUp})
       }
+
+
     render(){
         return (
             <div>
+            <button className="uk-align-center skewBtn lorang" onClick={this.componentDidMount.bind(this)} >RESET FILTER</button>
             <div className='container'>
             <span>
             <input className='add' type="number" min="1" placeholder='# of Cards'></input>
             <a onClick={this.addCard.bind(this)}><i class="fas fa-plus"></i></a>
             </span>
             <span>
-            <input onChange={this.filterCards.bind(this)}className='filter' type="text" required placeholder='Filter'></input>
-            <a onClick={this.filterCards.bind(this)}><i class="fas fa-filter"></i></a> hay que ver que hacemos con esto
-            <button>RESET FILTER</button>
+            <input onChange={this.filterCards.bind(this)} className='filter' type="text" required placeholder='Filter'></input>
+            <a onClick={this.filterCards.bind(this)}><i class="fas fa-filter"></i></a>
+            
             </span>
             </div>
             <div className="uk-grid-collapse uk-text-center"  uk-sortable="handle: .uk-sortable-handle" uk-grid='true'>
