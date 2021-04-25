@@ -49,12 +49,14 @@ export default class CardsContainer extends Component {
         console.log(lookUp)
           this.setState({infoCards: lookUp})
       }
-
+      // resetFilter(){
+      //   this.setState({infoCards: data.results})
+      // }
 
     render(){
         return (
             <div>
-            <button className="uk-align-center skewBtn lorang" onClick={this.componentDidMount.bind(this)} >RESET FILTER</button>
+            <button className="uk-align-center skewBtn lorang" onClick={this.resetFilter.bind(this)} >RESET FILTER</button>
             <div className='container'>
             <span>
             <input className='add' type="number" min="1" placeholder='# of Cards'></input>
