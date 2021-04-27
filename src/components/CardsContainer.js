@@ -6,14 +6,15 @@ export default class CardsContainer extends Component {
     constructor(props){
         super(props);
         this.state = {
-            infoCards:[ ]
+            infoCards:[ ],
+            infoCardsOriginal:[]
         }
     }
     componentDidMount(){
         fetch('https://randomuser.me/api/?results=9')
         .then((result) => result.json())
         .then((data) => { 
-          this.setState({infoCards: data.results})
+          this.setState({infoCards: data.results, infoCardsOriginal:data.results})
         })
       }
 
@@ -49,9 +50,9 @@ export default class CardsContainer extends Component {
         console.log(lookUp)
           this.setState({infoCards: lookUp})
       }
-      // resetFilter(){
-      //   this.setState({infoCards: data.results})
-      // }
+      resetFilter(){
+        this.setState({infoCards: this.state.infoCardsOriginal})
+      }
 
     render(){
         return (
