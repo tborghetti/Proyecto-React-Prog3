@@ -17,15 +17,6 @@ export default class CardsContainer extends Component {
           this.setState({infoCards: data.results, infoCardsOriginal:data.results})
         })
       }
-      
-      // openCard(idCard){
-      //   console.log(idCard);
-      //   let openedCard = this.state.infoCards.map((item)=>{
-      //     if (item.id === idCard){
-      //       return true
-      //     } 
-      //  })
-      // }
 
       delete(idCard){
         console.log(idCard);
@@ -83,8 +74,6 @@ export default class CardsContainer extends Component {
                 {this.state.infoCards.map( (oneCard, idx) => {
                     return (
                         <Card DataShown={oneCard} key={idx} onDelete={this.delete.bind(this)} id={oneCard.id} originaldate={oneCard.dob.date} />
-                    
-
                     )
                 })
                 }

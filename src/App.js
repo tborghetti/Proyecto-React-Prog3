@@ -11,10 +11,7 @@ function App() {
       <CardsContainer />
       <hr></hr>
       <Footer />
-      
     </div>
-  
-  
   );
 }
 

@@ -9,7 +9,7 @@ export default class Card extends Component {
     }
     componentDidMount(){
         let apiDate = this.props.originaldate;
-        let timestamp = new Date(apiDate).getTime();
+        let timestamp = new Date(apiDate).getTime(); //Date es una funcion que viene de React
         let day = new Date(timestamp).getDate();
         let month = new Date(timestamp).getMonth() + 1;
         let year = new Date(timestamp).getFullYear();
@@ -32,9 +32,9 @@ export default class Card extends Component {
                     <p className="other">{this.state.beautifulDate} - ({this.props.DataShown.dob.age}) </p>
                     <hr></hr>
                 </div>
-                <ul uk-accordion="multiple: true">
-                    <li className="uk-close">
-                        <a className="Card uk-accordion-title" href="#">More details</a>
+                <ul uk-accordion='true'>
+                    <li className= 'uk-close'>
+                        <a className="Card uk-accordion-title">More details</a>
                         <div className="moreDetail uk-accordion-content">
                             <ul>
                                 <li>
