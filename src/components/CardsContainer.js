@@ -10,6 +10,7 @@ export default class CardsContainer extends Component {
             infoCardsOriginal:[]
         }
     }
+
     componentDidMount(){
         fetch('https://randomuser.me/api/?results=9')
         .then((result) => result.json())
@@ -36,6 +37,7 @@ export default class CardsContainer extends Component {
           this.setState({infoCards: info})
         })
       }
+
       filterCards(){
         let inputFilter = document.querySelector(".filter").value.toUpperCase()
         console.log(inputFilter)
@@ -43,13 +45,13 @@ export default class CardsContainer extends Component {
             let fname = search.name.first.toUpperCase()
             let flastname = search.name.last.toUpperCase()
             let fage = search.dob.age.toString()
-            
-            
-          return fname.startsWith(inputFilter) || flastname.startsWith(inputFilter) ||  fage.includes(inputFilter) //buscar si incluye el numero y pasar todo a tring y poner con el metodo include()
+
+          return fname.startsWith(inputFilter) || flastname.startsWith(inputFilter) ||  fage.includes(inputFilter) //buscar si incluye el numero y pasar todo a string y poner con el metodo include()
           })
         console.log(lookUp)
           this.setState({infoCards: lookUp})
       }
+
       resetFilter(){
         this.setState({infoCards: this.state.infoCardsOriginal})
       }
